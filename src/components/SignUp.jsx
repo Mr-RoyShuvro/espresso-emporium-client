@@ -23,7 +23,8 @@ const SignUp = () => {
             console.log(result.user);
 
             const createdTime = result.user.metadata.creationTime;
-            const user = {firstName, lastName, phone, address, email, password, createdTime};
+            const lastSignInTime = result.user.metadata.lastSignInTime; 
+            const user = {firstName, lastName, phone, address, email, password, createdTime, lastSignInTime};
             /* Store user in database */
             fetch('http://localhost:5000/user', {
                 method: 'POST',
